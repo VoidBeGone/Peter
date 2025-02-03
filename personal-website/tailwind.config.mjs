@@ -11,6 +11,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        roboto: ['Roboto Slab', 'serif'],  
+        cursive: ['Cedarville Cursive', 'cursive'], 
+      },
     },
   },
   plugins: [],

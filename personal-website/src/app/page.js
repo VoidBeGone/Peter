@@ -1,9 +1,8 @@
-import Image from "next/image";
-
+import Navbar from "./frontend/components/Navbar.js";
+// pages/index.js
 export default function Home() {
+
   return (
-    <div>
-      Hello world!
-    </div>
+    <Navbar></Navbar>
   );
 }
