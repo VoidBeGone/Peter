@@ -9,7 +9,7 @@ export default {
     extend: {
       colors: {
         background: "var(--background)",
-        foreground: "var(--foreground)",
+        foreground: "Avar(--foreground)",
       },
       fontFamily: {
         roboto: ['Roboto Slab', 'serif'],  

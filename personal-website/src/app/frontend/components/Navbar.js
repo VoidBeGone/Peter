@@ -18,13 +18,18 @@ const cedarvilleCursive = Cedarville_Cursive({
 });
 
 // pages/index.js
-export default function Navbar() {
+export default function Navbar({handleNavClick}) {
   const [activeNav, setActiveNav] = useState('Home');
 
-  const handleNavClick = (navName) => {
+  const navPressed = (navName) => {
     setActiveNav(navName);
   };
 
+  const handleClick = (navName) => {
+    setActiveNav(navName);
+    handleNavClick(navName);
+  }
+  
   return (
     <div className="navbarcontainer">
       <div className="navcontent">
@@ -35,7 +40,7 @@ export default function Navbar() {
           <div
             key={navItem}
             className={`navOptions ${activeNav === navItem ? 'active' : ''} font-roboto`}
-            onClick={() => handleNavClick(navItem)}
+            onClick={() => handleClick(navItem)}
           >
             {navItem}
           </div>

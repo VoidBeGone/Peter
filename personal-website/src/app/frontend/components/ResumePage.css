@@ -1,0 +1,188 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+    background-image:url("../../../../public/notecute.jpeg");
+    overflow-x: hidden;
+  }
+  
+.ResumePageContainer{
+    width:100%;
+    height:calc(100vh - 100px);
+    display:flex;
+    flex-direction:row;
+}
+
+.ResumeGraderSection{
+    flex:5;
+}
+
+.LeftSide{
+    flex:1;
+    /*border:1px solid rgb(218, 217, 217);*/
+    height:calc(100vh - 100px);
+    margin-right:20px;
+}
+
+.RightSide{
+    flex:1;
+    display:flex;
+    /*border:1px solid rgb(218, 217, 217);*/
+    height:calc(100vh - 100px);
+    margin-left:20px;
+}
+
+.resumeInside{
+    width:100%;
+    min-height:calc(100vh - 100px);
+   /* border:1px solid rgb(218, 217, 217);*/
+}
+
+.ri {
+    font-size: 30px;
+    padding: 30px 50px;
+    color:rgb(46, 46, 46);
+    font-weight: bold;
+}
+
+.fileInput{
+    font-size: 20px;
+    color:rgb(218, 217, 217);
+    padding-left:30px;
+    padding-bottom:30px;
+}
+.resumeInputContainer {
+    width: 90%;
+    min-height: 30vh;
+    margin-left: 5%;
+    display: flex;
+    background: rgb(240, 240, 240);
+    background-size: 200% 200%;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    padding-bottom: 30px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition:all ease 1s;
+    position: relative;
+    overflow: hidden;
+}
+
+.resumeInputContainer:hover {
+    transform: scale(1.01); /* Scale effect on hover */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.244);
+}
+
+.ricBorder{
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    border-radius:10px;
+    border: 3px dotted #a3a3a3;
+    width:90%;
+    height:20vh;
+    margin: 10px 0;
+    box-sizing:border-box;
+    transition: all ease 1s;
+}
+
+.ricBorder:hover {
+    border-color: #20DED3; 
+    box-shadow: 0px 0px 10px #abfba29a;
+}
+.ricText1{
+    font-size: 25px;
+    padding-top:10px;
+    color:black;
+}
+
+.ricText2{
+    font-size: 20px;
+    color:black;
+}
+
+.ricText3{
+    font-size:16px;
+    margin-bottom:10px;
+    color:rgb(138, 138, 138);
+}
+#fileID{
+    display:none;
+}
+
+.btn {
+    background: linear-gradient(45deg, #20DED3, #abfba2);
+    background-size: 200% 200%;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 1s ease, background-position 1s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #20DED3, #abfba2);
+    background-size: 200% 200%;
+    z-index: -1;
+    background-position: 0% 0%; 
+    transition: background-position 1s ease;
+}
+
+.btn:hover::before {
+    background-position: 100% 0%; 
+}
+
+.btn:hover {
+    transform: scale(1.05); 
+}
+
+
+
+  .form input {
+    margin: 10px 0;
+    width: 100%;
+    background-color: #e2e2e2;
+    border: none;
+    outline: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+  }
+  
+.containerform{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+}
+.qweqwe{
+    margin-top:20px;
+    margin-bottom:20px;
+    font-size: 20px;
+    color:rgb(46, 46, 46);
+}
+
+.geminiOutput{
+    padding:10px 20px;
+    margin:25px;
+
+}
+
+.geminiHeader{
+    font-size:20px;
+    margin-bottom:10px;
+    color:rgb(46, 46, 46);
+}
+
+.geminiText{
+    color:rgb(46, 46, 46);
+}
