@@ -1,5 +1,5 @@
 "use client";
-import "./ResumePage.css";
+import "../styles/ResumePage.css";
 import {useRef, useState} from "react";
 import { Roboto_Slab } from 'next/font/google';
 
@@ -44,7 +44,6 @@ export default function ResumePage(){
             const data = await response.json();
             const cleanedData = cleanGeminiResponse(data.output);
             setGeminiData(cleanedData);
-            console.log(cleanedData);
             setHasFileBeenUpload(false);
             setSending(false);
         }   
@@ -65,7 +64,8 @@ export default function ResumePage(){
 
 
     return (
-        <div className = "ResumePageContainer">
+        <div className = "BackgroundContainer">
+            <div className = "ResumePageContainer">
             <div className = "LeftSide">
             </div>
             <div className = "ResumeGraderSection">
@@ -77,7 +77,7 @@ export default function ResumePage(){
                             {!hasFileBeenUpload ? (
                                 <>
                                     <p className = {`ricText2 ${robotoSlab.className}`}>Select Files</p>
-                                    <p className = {`ricText3 ${robotoSlab.className}`}>Accepted files: doc, pdf</p>
+                                    <p className = {`ricText3 ${robotoSlab.className}`}>Accepted files: pdf</p>
                                     <button className="btn" onClick={handleFileButtonClick}>Choose File</button>
                                 </>
                             ) : (
@@ -89,7 +89,7 @@ export default function ResumePage(){
                                 </form>
                             )}
                             </div>
-                        <input type="file" hidden accept=".doc,.docx,.pdf" id="fileID" ref={fileInputRef} onChange={handleFileChange}></input>
+                        <input type="file" hidden accept=".pdf" id="fileID" ref={fileInputRef} onChange={handleFileChange}></input>
                     </div>
                     <div className = "geminiOutput">
                         <p className = {`geminiHeader ${robotoSlab.className} font-bold`}>{selectedFile ? `Grade and Suggestions for ${selectedFile.name}` : "Upload a resume to get started"}</p>
@@ -113,7 +113,8 @@ export default function ResumePage(){
                     </div>
                 </div>
             </div>
-            <div className = "RightSide"></div>
+                <div className = "RightSide"></div>
+            </div>
         </div>
     )
 }

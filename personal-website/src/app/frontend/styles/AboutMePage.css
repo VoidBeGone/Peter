@@ -1,0 +1,71 @@
+.AboutMePageContainer{
+    margin-left:150px;
+    width: calc(100% - 150px);
+    display:flex;
+    flex-direction:column;
+}
+
+.AboutMePageContainer .Title{
+    font-size:35px;
+    padding:40px;
+    width:100%;
+    text-shadow: 0 0 5px #ddddddaa;
+}
+
+.AboutMePageContainer .Content{
+    display:flex;
+    width: 100%;
+    margin-bottom:20px;
+}
+
+.AboutMePageContainer .Content .myimage, .AboutMePageContainer .Content .myimage2{
+    flex:1;
+    flex-grow:1;
+    border-radius:30px;
+    background-image:url("/friends.jpg");
+    width:50%;
+    height:50vh;
+    background-size: cover;
+    background-position: center;
+    box-shadow:0 0 20px #bacdcc74;
+    margin-right:20px;
+}
+.AboutMePageContainer .Content .myimage2{
+    background-image:url("/gucci.jpg");
+    width:50%;
+    height:70vh;
+}
+
+.AboutMePageContainer .Content .AboutMe{
+    flex:1;
+    padding:0 40px;
+    font-size:20px;
+    text-shadow:0 0 3px #ddddddaa;
+}
+
+
+
+@media(max-width:1000px){
+    .AboutMePageContainer .Content{
+        flex-direction:column;
+        align-items: center; 
+    }
+
+    .AboutMePageContainer .Content .myimage, .AboutMePageContainer .Content .myimage2{
+        flex: none;
+        width: 90%;
+        height: 40vh;
+        margin: 80px auto;
+    }
+    .AboutMePageContainer .Content .myimage2{
+        height:60vh;
+    }
+}
+
+@media(max-width:600px){
+    .AboutMePageContainer{
+        margin-left:0px;
+        width:100%;
+    }
+    
+}

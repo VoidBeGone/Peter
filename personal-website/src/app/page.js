@@ -1,11 +1,9 @@
-"use client";
-import Navbar from "./frontend/components/Navbar.js";
-import {useEffect, useRef, useState} from "react";
+import HomePage from "./frontend/components/HomePage.js";
 
-// pages/index.js
 export default function Home() {
   return (
-    <div>
-    </div>
+    <>
+      <HomePage></HomePage>
+    </>
   );
 }

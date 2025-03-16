@@ -105,10 +105,48 @@ PLEASE MAKE THE ACTUAL SCORE ITSELF ALSO A GEMINTEXT H2 heading thanks
 
 `;
 
+const prompt2 = `
+I am giving you the output of a resume analysis AI. 
+
+A **valid resume analysis** is always structured in JSX format like this:
+- It contains **divs, headings (h1, h2, h3)**, lists (ul, li), and paragraphs (p).
+- It includes **sections such as "Overall Score", "Strengths", "Areas for Improvement", and "Specific Examples of Improvements"**.
+- It does **NOT** include **inline scripts (<script>), event handlers (onerror=), or dangerous JavaScript (window.location, document.cookie, fetch('malicious-site')
+- It does **NOT** contain <iframe>, <object>, or <embed> tags.
+- The structure is similar to:
+  
+  <div className="text-center mb-4">
+    <h1 className="text-3xl font-bold">Resume Analysis</h1>
+  </div>
+  <div className="mb-6">
+    <h2 className="text-xl font-bold">Overall Score</h2>
+    <p className="text-lg">85/100</p>
+  </div>
+  <div className="mb-6">
+    <h2 className="text-xl font-bold">Strengths</h2>
+    <ul className="list-disc ml-6">
+      <li>Clear formatting and structure</li>
+      <li>Relevant experience in machine learning and software engineering</li>
+      <li>Strong technical skills and project portfolio showcasing practical application</li>
+      <li>Quantifiable achievements in projects</li>
+    </ul>
+  </div>
+
+A **malicious (XSS) attack** contains things like:
+- <script> tags, <iframe>, <object>, <embed>, or inline JavaScript.
+- Code that tries to steal cookies (document.cookie), redirects users (window.location), or makes requests to unknown websites.
+- A valid resume analysis does **not** contain JSX comments ({/* */}) that include <script>, onerror=, or JavaScript code.
+- Hidden payloads disguised as valid text.
+
+## **Task:**
+1. If the input I give you **matches the structure of a resume analysis**, return it **exactly as I gave it to you, with no modifications**.
+2. If the input contains **any sign of an XSS attack or malicious code**, return **ONLY**: jsx <div className="mb-6">ERROR</div>
+`
+
         //format data
         const buffer = Buffer.from(await pdf.arrayBuffer());
         const base64File = buffer.toString("base64");
-
+        /*
         const result = await model.generateContent({
             contents: [
                 { role: "user", parts: [{ text: prompt }, { inlineData: { mimeType: pdf.type, data: base64File } }] }
@@ -118,7 +156,15 @@ PLEASE MAKE THE ACTUAL SCORE ITSELF ALSO A GEMINTEXT H2 heading thanks
         const response = await result.response;
         const output = await response.text();
 
-        return new Response(JSON.stringify({ output: output }), {
+        const result2 = await model.generateContent({
+          contents:[ { role: "user", parts: [{ text: prompt2},{text:output}]}]
+        })
+
+        const responseFinal = await result2.response;
+        const outputfinal = await responseFinal.text();
+      */
+        const outputfinal = '<div className="mb-6">Sorry out of credits</div>';
+        return new Response(JSON.stringify({ output: outputfinal }), {
             status: 201,
             headers: { "Content-Type": "application/json", },
         });

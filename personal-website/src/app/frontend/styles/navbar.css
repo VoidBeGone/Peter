@@ -1,0 +1,188 @@
+/* Standard sidebar for desktop */
+.NavBarContainer {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 150px; 
+    height: 100vh; 
+    background: #111; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navItem {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    color: white;
+    margin: 20px 0;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    color: #ddd;
+    text-shadow: 0 0 3px #ddddddaa;
+    position: relative;
+    display: inline-block;
+}
+
+.navItem::after {
+    content: "";
+    position: absolute;
+    left: -20%; 
+    bottom: 0; 
+    width: 2px; 
+    height: 0;
+    background: #ddd; 
+    transition: height 0.5s ease-in-out;
+}
+
+.navItem:hover::after {
+    height: 100%; 
+    bottom: auto;
+    top: 0;
+}
+
+.NavBarContainer .middle {
+    flex: 1;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.NavBarContainer .bottom {
+    margin-top: auto; 
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 70px;
+}
+
+.instagram, .linkedin, .github {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    margin-top: 20px;
+}
+.MobileNav {
+    display:none;
+}
+.instagram { background-image: url("../../../../public/instagram.svg"); }
+.linkedin { background-image: url("../../../../public/linkedin.svg"); }
+.github { background-image: url("../../../../public/github.svg"); }
+
+@media (max-width: 600px), (max-height: 575px) {
+    .NavBarContainer {
+        display: none;
+    }
+
+    .MobileNav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        z-index: 100;
+    }
+
+    .menuIcon {
+        font-size: 30px;
+        width:30px;
+        height:30px;
+        color: white;
+        cursor: pointer;
+        transition: transform 1s ease-in-out; 
+    }
+    
+    .menuIcon:hover{
+        transform: rotate(180deg);
+    }
+
+    .dropdownMenu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(40, 40, 40, 0.7);
+        backdrop-filter: blur(100px); 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(-100%);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .dropdownMenu.open {
+        transform: translateY(0);
+    }
+
+    .closeIcon {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+        color: #ddd;
+        cursor: pointer;
+        transition: transform 1s ease-in-out; 
+    }
+    
+    .closeIcon:hover{
+        transform: rotate(180deg);
+    }
+
+    .menuItems {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .dropdownItem {
+        font-size: 24px;
+        color: #ddd;
+        text-decoration: none;
+        position: relative;
+        display: inline-block;
+        transition: color 1s ease-in-out;
+    }
+    
+    .dropdownItem::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px; 
+        width: 0; 
+        height: 2px;
+        background: #ddd;
+        transition: width 0.5s ease-in-out; 
+    }
+    
+    .dropdownItem:hover {
+        color: #ffffff;
+    }
+    
+    .dropdownItem:hover::after {
+        width: 100%; 
+    }
+    
+
+    .socialIcons {
+        display: flex;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .socialIcons a {
+        width: 40px;
+        height: 40px;
+        background-size: contain;
+    }
+
+    .socialIcons .instagram { background-image: url("../../../../public/instagram.svg"); }
+    .socialIcons .linkedin { background-image: url("../../../../public/linkedin.svg"); }
+    .socialIcons .github { background-image: url("../../../../public/github.svg"); }
+}

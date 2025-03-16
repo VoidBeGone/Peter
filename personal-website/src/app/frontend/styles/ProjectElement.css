@@ -1,0 +1,34 @@
+.ProjectElementContainer{
+    width:100%;
+}
+
+.ProjectElementContainer .OneElement{
+    display:flex;
+    flex-direction:column;
+    padding-bottom:40px;
+    border-bottom:0.1px solid #dddddd4c;
+    cursor:pointer;
+}
+
+.ProjectElementContainer .OneElement .PECTitle{
+    margin-top:30px;
+    margin-right:20px;
+    margin-left:20px;
+    text-shadow:0 0 5px #ddddddaa;
+    font-size:24px;
+}
+
+.ProjectElementContainer .OneElement .PECDes{
+    padding-right:20px;
+    padding-left:20px;
+    text-shadow:0 0 4px #ddddddaa;
+    font-size:18px;
+}
+
+
+.ProjectElementContainer .OneElement .PECDate{
+    margin-right:20px;
+    margin-left:20px;
+    font-size:20px;
+    text-shadow:0 0 3px #ddddddaa;
+}
