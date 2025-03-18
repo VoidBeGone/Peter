@@ -191,7 +191,7 @@ html, body{
         width:350px;
         min-width:0px;
         padding-right:0px;   
-        height:100vh;
+        height:120vh;
     }
 
     .HomeContainer .MainContent .top .peterImage{
@@ -202,12 +202,14 @@ html, body{
     .HomeContainer .MainContent .bottom .bottomData .MyPicture{
         border-radius:30px;
         background-image:url("/peterisaac.jpg");
-        width:350px;
-        height: 500px;
         background-size: cover;
         background-position: center;
         margin-top:50px;
         box-shadow:0 0 20px #bacdcc74;
         margin-right:50px;
+        flex: none;
+        width: 90%;
+        height: 40vh;
+        background-repeat:no-repeat;
     }
 }
